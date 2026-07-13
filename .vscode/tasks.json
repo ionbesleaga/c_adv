@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "command": "gcc",
+      "args": ["-g", "-O0", "*.c", "-o", "app"],
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "run",
+      "type": "shell",
+      "command": "cmd",
+      "args": ["/d", "/c", "chcp 65001>nul && ${workspaceFolder}\\app.exe"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "dependsOn": ["build"]
+    }
+  ]
+}
